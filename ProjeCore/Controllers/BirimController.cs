@@ -63,6 +63,8 @@ namespace ProjeCore.Controllers
         public IActionResult BirimDetaylar(int id)
         {
             var p = _context.Personels.Where(x=> x.BirimId==id).ToList();
+            var deg = _context.Birims.Where(x => x.BrimId == id).Select(y => y.BrimAd).FirstOrDefault();
+            ViewBag.d = deg;
             
             return View(p);
         }
