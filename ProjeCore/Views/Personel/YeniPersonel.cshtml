@@ -1,0 +1,23 @@
+﻿@using ProjeCore.Models
+@model Personel
+@{
+    ViewData["Title"] = "YeniPersonel";
+}
+
+<form method="post">
+    <label asp-for="Ad">Personel Ad</label> <br />
+    <input type="text" asp-for="Ad" /> <br /><br />
+    <label asp-for="Soyad">Personel Soyadı</label><br />
+    <input type="text" asp-for="Soyad" /> <br /><br />
+    <label asp-for="Şehir">Personel Şehiri</label><br />
+    <input type="text" asp-for="Şehir" /> <br /><br />
+
+    @*@Html.DropDownListFor( x=> x.Birim.BrimId (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control"})*@
+    @Html.DropDownListFor(c => c.Birim.BrimId, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+
+    
+
+<button class="btn btn-outline-primary">create</button>
+
+</form>
+

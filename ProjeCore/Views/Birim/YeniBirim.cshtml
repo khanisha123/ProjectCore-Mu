@@ -1,0 +1,18 @@
+﻿@using ProjeCore.Models
+@model Birim
+@{
+    ViewData["Title"] = "YeniBirim";
+}
+
+<form class="form-check" method="post">
+
+    <label asp-for="BrimAd">Departman Adı</label><br>
+    <input asp-for="BrimAd" type="text"><br>
+    <br />
+    @*<label asp-for="DepartmanAbout">Departman About</label><br />
+    <input type="text" asp-for="DepartmanAbout" />*@
+    <br />
+    <button class="btn btn-info">Departman Ekle</button>
+
+</form>
+

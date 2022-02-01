@@ -1,0 +1,44 @@
+﻿@using ProjeCore.Models
+@model List<Personel> 
+@{
+    ViewData["Title"] = "Index";
+}
+
+<table class="table table-active">
+    <tr>
+        <th>Id</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Şehir</th>
+        <th>Birim Ad</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.PersonelId</td>
+            <td>@item.Ad</td>
+            <td>@item.Soyad</td>
+            <td>@item.Şehir</td>
+            <td>@item.Birim.BrimAd</td>
+            
+
+            <td>
+                <a asp-action="PersonelSil" asp-route-id="@item.PersonelId" class="btn btn-danger">Sil</a>
+
+            </td>
+            <td>
+                <a asp-controller="Birim" asp-action="BirimGetir" asp-route-id="@item.PersonelId" class="btn btn-success">Güncelle</a>
+            </td>
+            <td><a asp-controller="Birim" asp-action="DetaylarG" asp-route-id="@item.PersonelId" class="btn btn-dark">Detaylar</a></td>
+
+        </tr>
+    }
+
+</table>
+
+<a asp-controller="Personel" asp-action="YeniPersonel" class="btn btn-outline-primary">Yeni Personel</a>
+

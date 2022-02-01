@@ -1,0 +1,30 @@
+﻿@using ProjeCore.Models
+@model List<Personel>
+@{
+    ViewData["Title"] = "BirimDetaylar";
+}
+
+<table class="table table-active">
+    <tr>
+        <th>Id</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Şehir</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.PersonelId</td>
+            <td>@item.Ad</td>
+            <td>@item.Soyad</td>
+            <td>@item.Şehir</td>
+
+
+        </tr>
+    }
+
+</table>
+<a asp-controller="Birim" asp-action="Index" class="btn btn-info">Go to Back</a>
+
+
